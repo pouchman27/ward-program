@@ -1,0 +1,970 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Milton Ward//Ward Program//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Milton Ward
+X-WR-CALDESC:Sacrament meeting programs and youth activities for Milton Wa
+ rd
+BEGIN:VTIMEZONE
+TZID:America/New_York
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+DTSTART:19700308T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+DTSTART:19701101T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:sacrament-2026-09-06@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260906T090000
+DTEND;TZID=America/New_York:20260906T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-08-30@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260830T090000
+DTEND;TZID=America/New_York:20260830T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-08-23@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260823T090000
+DTEND;TZID=America/New_York:20260823T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-08-16@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260816T090000
+DTEND;TZID=America/New_York:20260816T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-08-09@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260809T090000
+DTEND;TZID=America/New_York:20260809T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-08-02@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260802T090000
+DTEND;TZID=America/New_York:20260802T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-07-26@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260726T090000
+DTEND;TZID=America/New_York:20260726T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-07-19@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260719T090000
+DTEND;TZID=America/New_York:20260719T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-07-12@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260712T090000
+DTEND;TZID=America/New_York:20260712T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-07-05@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260705T090000
+DTEND;TZID=America/New_York:20260705T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-06-28@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260628T090000
+DTEND;TZID=America/New_York:20260628T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-06-21@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260621T090000
+DTEND;TZID=America/New_York:20260621T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-06-14@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260614T090000
+DTEND;TZID=America/New_York:20260614T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-06-07@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260607T090000
+DTEND;TZID=America/New_York:20260607T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-05-31@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260531T090000
+DTEND;TZID=America/New_York:20260531T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-05-24@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260524T090000
+DTEND;TZID=America/New_York:20260524T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-05-17@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260517T090000
+DTEND;TZID=America/New_York:20260517T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-05-10@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260510T090000
+DTEND;TZID=America/New_York:20260510T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-05-02@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260502T090000
+DTEND;TZID=America/New_York:20260502T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-04-26@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260426T090000
+DTEND;TZID=America/New_York:20260426T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-04-12@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260412T090000
+DTEND;TZID=America/New_York:20260412T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-03-29@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260329T090000
+DTEND;TZID=America/New_York:20260329T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-03-22@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260322T090000
+DTEND;TZID=America/New_York:20260322T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-03-15@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260315T090000
+DTEND;TZID=America/New_York:20260315T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-03-08@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260308T090000
+DTEND;TZID=America/New_York:20260308T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-03-01@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260301T090000
+DTEND;TZID=America/New_York:20260301T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-02-22@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260222T090000
+DTEND;TZID=America/New_York:20260222T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-02-15@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260215T090000
+DTEND;TZID=America/New_York:20260215T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-02-08@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260208T090000
+DTEND;TZID=America/New_York:20260208T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-02-01@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260201T090000
+DTEND;TZID=America/New_York:20260201T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-01-25@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260125T090000
+DTEND;TZID=America/New_York:20260125T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-01-18@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260118T090000
+DTEND;TZID=America/New_York:20260118T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-01-11@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260111T090000
+DTEND;TZID=America/New_York:20260111T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:sacrament-2026-01-03@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260103T090000
+DTEND;TZID=America/New_York:20260103T103000
+SUMMARY:Milton Ward Sacrament Meeting
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Sacrament meeting. Full program: https://pouchman27.github.io/
+ ward-program/
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-01-01@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260101T190000
+DTEND;TZID=America/New_York:20260101T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:No Activities - New Years Day\nNo Activities - New Years Day\n
+ Thurs 1st - New Years Day\nBuilders of Faith: No Activities - New Years D
+ ay\; Messengers of Hope: No Activities - New Years Day\; Gatherers of Lig
+ ht: No Activities - New Years Day\; Deacons: No Activities - New Years Da
+ y\; Teachers: No Activities - New Years Day\; Priests: No Activities - Ne
+ w Years Day
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-01-08@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260108T190000
+DTEND;TZID=America/New_York:20260108T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple (Middle)\nMoved to 2nd week. Changed younger w/ middle\
+ nTue 6th - School starts\nBuilders of Faith: Missionary Experience (combi
+ ned w/ deacons)\; Messengers of Hope: Temple\; Gatherers of Light: Temple
+ \; Deacons: TBD\; Teachers: Temple\; Priests: Temple
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-01-15@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260115T190000
+DTEND;TZID=America/New_York:20260115T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Everyone Combined\nMove combined to 3rd week\nBuilders of Fait
+ h: Combined All - skits\; Messengers of Hope: Combined All\; Gatherers of
+  Light: Combined All\; Deacons: Combined All\; Teachers: Combined All\; P
+ riests: Combined All
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-01-22@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260122T190000
+DTEND;TZID=America/New_York:20260122T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (Older Combined)\nMonday 19th - MLK Jr. Day\nBuilde
+ rs of Faith: Planning & Games\; Gatherers of Light: Volleyball\; Deacons:
+  planning\, pizza\, pfeats of strength\; Priests: Volleyball
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-01-29@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260129T190000
+DTEND;TZID=America/New_York:20260129T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual\nIndividual\nBuilders of Faith: Candy Salad & Book 
+ of Mormon decorating\; Deacons: Top Golf\; Teachers: Basketball\; Priests
+ : Basketball
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-02-05@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260205T190000
+DTEND;TZID=America/New_York:20260205T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (YW Combined -14/15)\nDeacons: Laser Tag (church - 
+ reserve bldg)\; Teachers: Cooking\; Priests: Family History - Billy
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-02-12@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260212T190000
+DTEND;TZID=America/New_York:20260212T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Combined - Missionary Expo\nMissionary Expo\nSun. 8th - Superb
+ owl / Sat. 14th - Valentines Day\nBuilders of Faith: Missionary Expo\; Me
+ ssengers of Hope: Missionary Expo\; Gatherers of Light: Missionary Expo\;
+  Deacons: Missionary Expo\; Teachers: Missionary Expo\; Priests: Combined
+  all missionary Expo
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-02-19@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260219T190000
+DTEND;TZID=America/New_York:20260219T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual\nWas Temple. Now individual\nMon. 16th - Presidents
+  Day\nBuilders of Faith: Olympic Games\; Deacons: Game Night\; Teachers: 
+ Drum Lessons\; Priests: Financial Preparedness - Crosby
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-02-26@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260226T190000
+DTEND;TZID=America/New_York:20260226T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple (Younger)\nWas Individual. Now Temple\nBuilders of Fait
+ h: Temple\; Messengers of Hope: Motorcycle Tour 6:15\; Gatherers of Light
+ : Temple\; Deacons: Temple\; Teachers: Motorcycle Tour 6:15\; Priests: Te
+ mple
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-03-05@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260305T190000
+DTEND;TZID=America/New_York:20260305T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (YW Combined -YW 12)\nMarch Maddness\nBuilders of F
+ aith: Aloha Party\; Deacons: American Gladiator (1/2 gym and stage)\; Tea
+ chers: Chair Soccer\; Priests: Music Night - Beat
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-03-12@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260312T190000
+DTEND;TZID=America/New_York:20260312T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple (Middle)\nWas Combined All. Now Temple\nBuilders of Fai
+ th: Combined w/ deacons\; Messengers of Hope: Temple\; Gatherers of Light
+ : Temple\; Deacons: 9 Square\; Teachers: Temple\; Priests: Temple
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-03-19@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260319T190000
+DTEND;TZID=America/New_York:20260319T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Combined - TBD\nBingo\nTuesday 17th - St. Patrick's Day\nBuild
+ ers of Faith: Combined All\; Messengers of Hope: Bingo\; Gatherers of Lig
+ ht: Combined All\; Deacons: Combined\; Teachers: Combined All\; Priests: 
+ Combined all TBD
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-03-26@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260326T190000
+DTEND;TZID=America/New_York:20260326T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:YW Combined\nSun March 29th - Palm Sunday\nBuilders of Faith: 
+ Put together Easter Eggs\; Messengers of Hope: Flower arrangements\; Gath
+ erers of Light: Put together Easter Eggs\; Deacons: Croquet\; Teachers: F
+ ishing\; Priests: TopGolf
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-04-02@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260402T190000
+DTEND;TZID=America/New_York:20260402T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (YW Combined -YW 16)\nSunday 5th - Easter\nBuilders
+  of Faith: Dance Party\; Deacons: Gen. Conf.  Fantasy Football & Easter E
+ ggs\; Teachers: Gen. Conf.  Fantasy Football & Easter Eggs\; Priests: Dil
+ ligent Missionary
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-04-09@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260409T190000
+DTEND;TZID=America/New_York:20260409T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:No Activities -  Spring Break\nWas combined. Now no activities
+ \nBuilders of Faith: SPRING BREAK\; Messengers of Hope: SPRING BREAK\; Ga
+ therers of Light: SPRING BREAK\; Deacons: SPRING BREAK\; Teachers: SPRING
+  BREAK\; Priests: SPRING BREAK
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-04-16@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260416T190000
+DTEND;TZID=America/New_York:20260416T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Combined - Talent Show Prep\nTalent Show Prep\nBuilders of Fai
+ th: Combined All - Talent Show Prep\; Messengers of Hope: Combined All - 
+ Talent Show Prep\; Gatherers of Light: Combined All - Talent Show Prep\; 
+ Deacons: Combined All - Talent Show Prep\; Teachers: Combined All - Talen
+ t Show Prep\; Priests: Combined All - Talent Show Prep
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-04-23@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260423T190000
+DTEND;TZID=America/New_York:20260423T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple (Younger)\nTalent Show Sat. 25th\nBuilders of Faith: Te
+ mple\; Messengers of Hope: Fundraiser setup/games/favorite treat\; Gather
+ ers of Light: Temple\; Deacons: Temple\; Teachers: Fire Building/Sling Sh
+ ots @ Hunters\; Priests: Temple
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-04-30@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260430T190000
+DTEND;TZID=America/New_York:20260430T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual\nYM Campout Friday?\nBuilders of Faith: Sunset Hike
+ \; Messengers of Hope: Sunset Hike\; Gatherers of Light: Sunset Hike\; De
+ acons: No Activity\; Teachers: Yona Mnt Camping Friday?\; Priests: Combin
+ ed with YW 16+ Game night - with Elderly (Priest plan) Move to July?
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-05-07@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260507T190000
+DTEND;TZID=America/New_York:20260507T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (YW Combined-YW 14/15)\nYM Do Mother's Day Prep?\nS
+ unday 10th - Mother's Day\nBuilders of Faith: Camp Shirts\; Messengers of
+  Hope: Decorate Shirts for camp\; Deacons: Mountain Biking - Sat morning 
+ Mother's Day Prep Thursday - Blanket's Creek - meet at Bouton's at 9am\; 
+ Teachers: Mother's Day Prep\; Priests: YM - Mother's Day prep
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-05-14@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260514T190000
+DTEND;TZID=America/New_York:20260514T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Combined - Where's Waldo\nWhere's Waldo @ Avalon\nBuilders of 
+ Faith: Combined all where's Waldo @Avalon\; Messengers of Hope: Combined 
+ all where's Waldo @Avalon\; Gatherers of Light: Combined all where's Wald
+ o @Avalon\; Deacons: Combined all where's Waldo @Avalon\; Teachers: Combi
+ ned all where's Waldo @Avalon\; Priests: Combined all where's Waldo @Aval
+ on
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-05-21@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260521T190000
+DTEND;TZID=America/New_York:20260521T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:EOY School Party @ Atkinson's\nLast day of school - Keep Activ
+ ities\nThur 21st - Last Day of School (22nd Forsyth)\nBuilders of Faith: 
+ Pool Party\; Messengers of Hope: Pool Party\; Gatherers of Light: Pool Pa
+ rty\; Deacons: Pool Party\; Teachers: Pool Party\; Priests: Pool Party
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-05-28@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260528T190000
+DTEND;TZID=America/New_York:20260528T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (Older Combined)\nMonday 25th - Memorial Day\nBuild
+ ers of Faith: Camp Shirts & Braiding & Prep\; Messengers of Hope: Camp Sh
+ irts & Braiding & Prep\; Gatherers of Light: Camp Shirts & Braiding & Pre
+ p\; Deacons: Ultimate Frisbee at Tree Farm (combined with Teachers)\; Tea
+ chers: Ultimate Frisbee at Tree Farm\; Priests: Fishing
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-06-04@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260604T190000
+DTEND;TZID=America/New_York:20260604T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (YW Combined - YW 12)\nGirls Camp\nBuilders of Fait
+ h: YW Camp\; Messengers of Hope: YW Camp\; Gatherers of Light: YW Camp\; 
+ Deacons: YM Camp\; Teachers: YM Camp\; Priests: Pool Party (YW/YM camp we
+ ek)
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-06-11@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260611T190000
+DTEND;TZID=America/New_York:20260611T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Combined - Water Kickball (Tue)\nWater Slide Kickball (on Tues
+ day 9th)\nBuilders of Faith: Water Kickball (Tuesday)\; Messengers of Hop
+ e: Water Kickball (Tuesday)\; Gatherers of Light: Water Kickball (Tuesday
+ )\; Deacons: Water Kickball (Tuesday)\; Teachers: Water Kickball (Tuesday
+ )\; Priests: Water Kickball (Tuesday)
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-06-18@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260618T190000
+DTEND;TZID=America/New_York:20260618T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual\nPrep father's day?\nSunday 21st - Father's Day\nMe
+ ssengers of Hope: Chalk\; Deacons: Camping/Outdoor Movie Night YM\; Teach
+ ers: Camping/Outdoor Movie Night YM\; Priests: Camping/Outdoor Movie Nigh
+ t YM
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-06-25@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260625T190000
+DTEND;TZID=America/New_York:20260625T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple\nBuilders of Faith: Temple\; Messengers of Hope: Temple
+ \; Gatherers of Light: Temple\; Deacons: Temple\; Teachers: Temple\; Prie
+ sts: Temple
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-07-02@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260702T190000
+DTEND;TZID=America/New_York:20260702T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (YW Combined - YW 16)\nSaturday 4th - July 4th\nBui
+ lders of Faith: Breakfast Planning\; Messengers of Hope: Breakfast Planni
+ ng\; Gatherers of Light: Breakfast Planning\; Deacons: No Activity\; Teac
+ hers: TBD\; Priests: No Activity
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-07-09@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260709T190000
+DTEND;TZID=America/New_York:20260709T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple\nTBD\nBuilders of Faith: Temple\; Messengers of Hope: T
+ emple\; Gatherers of Light: Temple\; Deacons: Temple\; Teachers: Temple\;
+  Priests: Temple
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-07-16@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260716T190000
+DTEND;TZID=America/New_York:20260716T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Everyone Combined -- YW 12\nPool party at Mahler's\nBuilders o
+ f Faith: Pool party & games at Mahler's\; Messengers of Hope: Pool party 
+ & games at Mahler's\; Gatherers of Light: Pool party & games at Mahler's\
+ ; Deacons: Pool party & games at Mahler's\; Teachers: Pool party & games 
+ at Mahler's\; Priests: Pool party & games at Mahler's
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-07-23@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260723T190000
+DTEND;TZID=America/New_York:20260723T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (Older Combined)\nMessengers of Hope: Parents Night
+  Out *move to Friday?*\; Deacons: No Activity\; Priests: Boating/Waverunn
+ er
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-07-30@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260730T190000
+DTEND;TZID=America/New_York:20260730T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual\nMessengers of Hope: Pool Party\; Deacons: Swim Par
+ ty at Kasteler's Fri 7/31\; Teachers: Swim Party at Kasteler's Fri 7/31\;
+  Priests: Swim Party at Kasteler's Fri 7/31
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-08-04@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260804T190000
+DTEND;TZID=America/New_York:20260804T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (YW Combined--YW 14/15)\n(Move to Tuesdays)\nMon 3r
+ d - 1st Day of School (Thur 6th - Forsyth)\nMessengers of Hope: Picklebal
+ l/Volleyball/Popsicles\; Deacons: rest of year planning\; Teachers: rest 
+ of year planning
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-08-11@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260811T190000
+DTEND;TZID=America/New_York:20260811T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple (Younger)\nTemple\nBuilders of Faith: Class\; Messenger
+ s of Hope: Temple\; Gatherers of Light: Temple\; Deacons: Temple\; Teache
+ rs: Temple\; Priests: Temple
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-08-18@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260818T190000
+DTEND;TZID=America/New_York:20260818T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Everyone Combined - Deacons\nTubing on the River\nBuilders of 
+ Faith: Tubing on the River (Saturday)\; Messengers of Hope: Tubing on the
+  River (Saturday)\; Gatherers of Light: Tubing on the River (Saturday)\; 
+ Deacons: Tubing on the River (Saturday)\; Teachers: Tubing on the River (
+ Saturday)\; Priests: Tubing on the River (Saturday)
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-08-25@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260825T190000
+DTEND;TZID=America/New_York:20260825T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual\nBuilders of Faith: Taekwondo\; Messengers of Hope:
+  Watercolor Bookmarks\; Deacons: Chair Soccer\; Teachers: Chair Soccer\; 
+ Priests: Chair Soccer
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-09-01@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260901T190000
+DTEND;TZID=America/New_York:20260901T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (YW Combined - YW 12)\nBuilders of Faith: Mission P
+ rep\; Deacons: Card Games\; Teachers: Card Games\; Priests: Card Games
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-09-08@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260908T190000
+DTEND;TZID=America/New_York:20260908T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple (Middle)\n9/11 Service?\nMon. 7th - Labor Day / Fri. Se
+ pt 11th - Day of Service\nBuilders of Faith: Blind Baking in Kitchen\; Me
+ ssengers of Hope: Flag Football\; Deacons: Broom Hockey with BofFaith\; T
+ eachers: Temple\; Priests: Temple
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-09-15@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260915T190000
+DTEND;TZID=America/New_York:20260915T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Everyone Combined --YW 14\nDeacons: Combined - MofHope in char
+ ge
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-09-22@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260922T190000
+DTEND;TZID=America/New_York:20260922T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (Older Combined)\nCancel Fall Break?\nFall Break (F
+ ulton)\nBuilders of Faith: No Activity\; Messengers of Hope: Pipe Cleaner
+  Flowers\; Deacons: No Activity\; Teachers: No Activity\; Priests: No Act
+ ivity
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-09-29@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20260929T190000
+DTEND;TZID=America/New_York:20260929T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual\nCancel Fall Break?\nFall Break (Forsyth)\nBuilders
+  of Faith: No Activity\; Messengers of Hope: Walk\; Deacons: No Activity\
+ ; Teachers: No Activity\; Priests: No Activity
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-10-06@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261006T190000
+DTEND;TZID=America/New_York:20261006T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple Deacons & Faith\nBuilders of Faith: Temple\; Gatherers 
+ of Light: Temple\; Deacons: Temple\; Priests: Temple
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-10-13@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261013T190000
+DTEND;TZID=America/New_York:20261013T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:YW/YM Combined - YM Teachers\nCorn Maze (on the weekend)\nDeac
+ ons: Corn Maze on Sat\; Priests: Combined all corn maze (Sat)
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-10-20@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261020T190000
+DTEND;TZID=America/New_York:20261020T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:YW Combined - Light\nMonday 12th - Columbus Day\nDeacons: Iron
+  Chef
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-10-27@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261027T190000
+DTEND;TZID=America/New_York:20261027T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual\nSaturday 31st - Halloween\nDeacons: Pumpkin Carvin
+ g
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-11-03@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261103T190000
+DTEND;TZID=America/New_York:20261103T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (YW Combined - YW 14/15)\nYouth Sacrament Mtg Nov 8
+ th\nMessengers of Hope: YW Theme ASL\; Deacons: Leading Music
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-11-10@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261110T190000
+DTEND;TZID=America/New_York:20261110T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple (Middle)\nWednesday 11th - Veterans Day\nDeacons: Combo
+  - Builders of Faith in charge\; Priests: Combined all
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-11-17@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261117T190000
+DTEND;TZID=America/New_York:20261117T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Combined All - YW 16\nDeacons: Combined All - GofLight
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-11-24@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261124T190000
+DTEND;TZID=America/New_York:20261124T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual\nNo Activities - Thanksgiving\nThursday 26 - Thanks
+ giving Day\nDeacons: Turkey Bowl Thurs\; Priests: Turkey bowl (Thurs)
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-12-01@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261201T190000
+DTEND;TZID=America/New_York:20261201T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (YW Combined - YW 12)\nBuilders of Faith: White Ele
+ phant\; Deacons: Cultural Exp (TBD)
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-12-08@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261208T190000
+DTEND;TZID=America/New_York:20261208T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Temple (Younger)\nDeacons: Temple\; Priests: Combined all (Pri
+ est plan)
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-12-15@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261215T190000
+DTEND;TZID=America/New_York:20261215T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Everyone Combined -- Priests\nFri 18th - Last Day of Semester\
+ nMessengers of Hope: Quiet Place Game\; Deacons: Caroling (combined - Pri
+ ests in charge)
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-12-22@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261222T190000
+DTEND;TZID=America/New_York:20261222T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual (Combined Older)\nNo Activities - Christmas\nFriday
+  25th - Christmas\nDeacons: White Elephant Gift Exchange (all YM)\; Pries
+ ts: No activity (Christmas)
+END:VEVENT
+BEGIN:VEVENT
+UID:activity-2026-12-29@ward-program
+DTSTAMP:20260906T142935Z
+DTSTART;TZID=America/New_York:20261229T190000
+DTEND;TZID=America/New_York:20261229T200000
+SUMMARY:Milton Ward Youth Activity
+LOCATION:1750 Windward Concourse\, Alpharetta\, GA
+DESCRIPTION:Individual\nDeacons: No Mutual\; Priests: New Years Eve dance 
+ (Thurs)
+END:VEVENT
+END:VCALENDAR

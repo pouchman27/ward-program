@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Milton Ward - Sacrament Meeting Program</title>
+<style>
+  :root{
+    --ink:#2b2b28; --navy:#21374f; --gold:#a8863b; --paper:#fbf9f4;
+    --card:#ffffff; --line:#e6dfd0; --muted:#6f6a5c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; font-size:16px;}
+  .serif{font-family:Georgia,"Times New Roman",serif}
+  header.top{background:var(--navy);color:#f5f1e6;padding:22px 18px 18px;text-align:center}
+  header.top h1{font-family:Georgia,serif;font-weight:normal;font-size:1.45rem;letter-spacing:.04em}
+  header.top .sub{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:#c8b98f;margin-top:4px}
+  nav.tabs{display:flex;background:var(--navy);padding:0 6px 10px;gap:6px;justify-content:center;flex-wrap:wrap}
+  nav.tabs a{color:#d8d2c2;text-decoration:none;font-size:.82rem;padding:7px 13px;border-radius:999px;
+    border:1px solid rgba(216,210,194,.35);letter-spacing:.03em}
+  nav.tabs a.active{background:#f5f1e6;color:var(--navy);border-color:#f5f1e6;font-weight:600}
+  main{max-width:640px;margin:0 auto;padding:18px 14px 60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:18px 16px;margin-bottom:14px;box-shadow:0 1px 2px rgba(43,43,40,.04)}
+  .prog-date{font-family:Georgia,serif;font-size:1.5rem;color:var(--navy);text-align:center}
+  .prog-tag{text-align:center;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+  .gcal{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-top:4px}
+  .gcal:hover{text-decoration:underline}
+  .rule{text-align:center;color:var(--gold);margin:8px 0 2px;font-size:.9rem}
+  dl.pairs{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin-top:10px}
+  dl.pairs dt{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:2px;white-space:nowrap}
+  dl.pairs dd{font-size:1rem}
+  h2.sec{font-family:Georgia,serif;font-weight:normal;font-size:1.08rem;color:var(--navy);
+    border-bottom:1px solid var(--line);padding-bottom:6px;margin:4px 0 10px}
+  .hymn{font-size:1rem}
+  .hymn .num{color:var(--gold);font-weight:600;margin-right:6px}
+  a.hymn-link{color:inherit;text-decoration:none}
+  a.hymn-link:hover .hymn{text-decoration:underline}
+  .chip-sub{display:block;font-size:.68rem;font-weight:400;opacity:.85}
+  .act-purpose{font-size:.85rem;color:var(--muted);font-style:italic;text-align:center;margin:-6px auto 12px;max-width:36em}
+  ol.ann{margin-left:22px}
+  ol.ann li{margin-bottom:8px;white-space:pre-line}
+  ul.plain{list-style:none}
+  ul.plain li{margin-bottom:6px;white-space:pre-line}
+  ul.plain li:before{content:"\2726  ";color:var(--gold);font-size:.8em}
+  table.biz{width:100%;border-collapse:collapse;font-size:.95rem}
+  table.biz td{padding:5px 8px 5px 0;vertical-align:top}
+  table.biz td.role{color:var(--muted)}
+  .bizgrid{display:grid;grid-template-columns:1fr;gap:14px}
+  .bizhead{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .speaker{display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line)}
+  .speaker:last-child{border-bottom:none}
+  .speaker .ord{font-family:Georgia,serif;color:var(--gold);min-width:20px;text-align:center}
+  a.bulletin{display:inline-block;margin-top:12px;color:var(--navy);font-size:.9rem;
+    text-decoration:none;border:1px solid var(--navy);border-radius:6px;padding:7px 14px}
+  .arch-item{display:block;text-decoration:none;color:var(--ink);padding:13px 6px;border-bottom:1px solid var(--line)}
+  .arch-item .d{font-family:Georgia,serif;font-size:1.05rem;color:var(--navy)}
+  .arch-item .m{font-size:.82rem;color:var(--muted);margin-top:2px}
+  .arch-item.current .d:after{content:" \2022 This week";color:var(--gold);font-size:.8rem}
+  .adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:420px){.adv-grid{grid-template-columns:1fr}}
+  .adv h3{font-family:Georgia,serif;font-weight:normal;color:var(--navy);font-size:1rem;margin:10px 0 4px}
+  .adv ul{list-style:none;font-size:.92rem}
+  .adv ul li{padding:2px 0}
+  .adv .role{color:var(--muted);font-size:.82rem}
+  footer{text-align:center;color:var(--muted);font-size:.75rem;padding:24px 10px 40px}
+  footer a{color:var(--muted)}
+  .calsub{text-align:center;font-size:.8rem;color:var(--muted);padding:20px 14px 0;line-height:2}
+  .calsub a{color:var(--navy)}
+  .calsub .calbtn{display:inline-block;border:1px solid var(--navy);color:var(--navy);border-radius:999px;padding:4px 14px;font-size:.75rem;text-decoration:none;margin:0 3px;cursor:pointer;background:transparent;font-family:inherit}
+  @media print{.calsub{display:none}}
+  .empty{color:var(--muted);font-style:italic}
+  .notice{background:#f4eedd;border:1px solid var(--line);border-radius:10px;padding:16px;text-align:center;color:var(--muted)}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:14px}
+  .chips button{border:1px solid var(--navy);background:transparent;color:var(--navy);border-radius:999px;padding:6px 12px;font-size:.8rem;cursor:pointer}
+  .chips button.on{background:var(--navy);color:#f5f1e6;font-weight:600}
+  #gate{position:fixed;inset:0;background:var(--navy);display:flex;align-items:center;justify-content:center;z-index:50;padding:20px}
+  #gate .box{background:var(--card);border-radius:12px;padding:28px 24px;max-width:340px;width:100%;text-align:center}
+  #gate h1{font-family:Georgia,serif;font-weight:normal;color:var(--navy);font-size:1.3rem}
+  #gate .sub{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:4px 0 18px}
+  #gate input{width:100%;padding:12px 14px;font-size:1rem;border:1px solid var(--line);border-radius:8px;text-align:center}
+  #gate button{width:100%;margin-top:10px;padding:12px;background:var(--navy);color:#f5f1e6;border:none;border-radius:8px;font-size:1rem;cursor:pointer}
+  #gate .err{color:#a33;font-size:.85rem;margin-top:10px;display:none}
+  @media print{nav.tabs,footer{display:none}body{background:#fff}.card{border:none;box-shadow:none}}
+</style>
+</head>
+<body>
+<div id="gate">
+  <div class="box">
+    <h1>Milton Ward</h1>
+    <div class="sub">Sacrament Meeting Program</div>
+    <form id="gateform">
+      <input type="password" id="gatepw" placeholder="Ward passphrase" autocomplete="off" autofocus>
+      <button type="submit">Open program</button>
+    </form>
+    <div class="err" id="gateerr">That passphrase didn't work - try again.</div>
+  </div>
+</div>
+<header class="top">
+  <h1 id="ward">Milton Ward</h1>
+  <div class="sub">Sacrament Meeting Program</div>
+</header>
+<nav class="tabs" id="tabs">
+  <a href="#/" data-route="/">This Week</a>
+  <a href="#/activities" data-route="/activities">Activities</a>
+  <a href="#/announcements" data-route="/announcements">Announcements</a>
+  <a href="#/archive" data-route="/archive">Past Programs</a>
+</nav>
+<main id="app"><div class="notice">Loading&hellip;</div></main>
+<div class="calsub" id="calsub" style="display:none"></div>
+<footer id="foot"></footer>
+<script>
+const esc = s => String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtDate = iso => new Date(iso+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+let DATA = null;
+
+const GCAL_LOC = '1750 Windward Concourse, Alpharetta, GA';
+function gcalUrl(title, isoDate, startMin, endMin, details){
+  const d = isoDate.replace(/-/g,'');
+  const t = m => String(Math.floor(m/60)).padStart(2,'0') + String(m%60).padStart(2,'0') + '00';
+  const p = new URLSearchParams({action:'TEMPLATE', text:title, dates:`${d}T${t(startMin)}/${d}T${t(endMin)}`, ctz:'America/New_York', location:GCAL_LOC, details:details||''});
+  return 'https://calendar.google.com/calendar/render?' + p.toString();
+}
+function parseTimeMin(s){
+  const m = /(\d{1,2})(?::(\d{2}))?\s*(a\.?m\.?|p\.?m\.?)/i.exec(s||'');
+  if(!m) return null;
+  let hh = parseInt(m[1],10) % 12;
+  if(/^p/i.test(m[3])) hh += 12;
+  return hh*60 + parseInt(m[2]||'0',10);
+}
+const gcalLink = url => `<a class="gcal" href="${url}" target="_blank" rel="noopener">Add to Calendar</a>`;
+
+function hymnHtml(h){
+  if(!h) return '';
+  let t = '';
+  if(h.number) t += `<span class="num">#${esc(h.number)}</span>`;
+  t += esc(h.title||'');
+  const inner = `<span class="hymn">${t}</span>`;
+  return h.url ? `<a class="hymn-link" href="${esc(h.url)}" target="_blank" rel="noopener">${inner}</a>` : inner;
+}
+function pair(dt, dd){ return dd ? `<dt>${esc(dt)}</dt><dd>${dd}</dd>` : ''; }
+
+function programHtml(p, isCurrent){
+  const h = [];
+  h.push(`<div class="card">`);
+  if(isCurrent) h.push(`<div class="prog-tag">This Sunday</div>`);
+  h.push(`<div class="prog-date serif">${esc(fmtDate(p.date))}</div>`);
+  h.push(`<div style="text-align:center">${gcalLink(gcalUrl('Milton Ward Sacrament Meeting', p.date, 9*60, 10*60+30, 'Sacrament meeting - full program at https://pouchman27.github.io/ward-program/'))}</div>`);
+  h.push(`<div class="rule">&#10038;</div>`);
+  let pairs = '';
+  pairs += pair('Presiding', esc(p.presiding));
+  pairs += pair('Conducting', esc(p.conducting));
+  pairs += pair('Organist', esc(p.organist));
+  pairs += pair('Chorister', esc(p.chorister));
+  if(pairs) h.push(`<dl class="pairs">${pairs}</dl>`);
+  h.push(`</div>`);
+
+  const sec = (title, body) => body ? `<div class="card"><h2 class="sec">${title}</h2>${body}</div>` : '';
+
+  let op = '';
+  op += pair('Opening Hymn', hymnHtml(p.opening_hymn));
+  op += pair('Invocation', esc(p.invocation));
+  if(op) h.push(sec('Opening', `<dl class="pairs">${op}</dl>`));
+
+  if(p.membership_records && p.membership_records.length){
+    h.push(sec('Membership Records Received', `<ul class="plain">${p.membership_records.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`));
+  }
+  if(p.ordinances && p.ordinances.length){
+    h.push(sec('Ordinances &amp; Recognitions', `<ul class="plain">${p.ordinances.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`));
+  }
+  if(p.baby_blessing && p.baby_blessing.length){
+    h.push(sec('Baby Blessing', `<ul class="plain">${p.baby_blessing.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`));
+  }
+
+  let sac = '';
+  sac += pair('Sacrament Hymn', hymnHtml(p.sacrament_hymn));
+  if(sac) h.push(sec('Sacrament', `<dl class="pairs">${sac}</dl><div style="margin-top:10px;color:var(--muted);font-size:.9rem">Administration of the Sacrament</div>`));
+
+  if(p.speakers && p.speakers.length){
+    const sp = p.speakers.map(x => `<div class="speaker"><span class="ord serif">${x.n}</span><span>${esc(x.name)}</span></div>`).join('');
+    let extra = '';
+    if(p.intermediate_hymn) extra += `<div style="margin-top:10px"><dl class="pairs">${pair('Intermediate Hymn', hymnHtml(p.intermediate_hymn))}</dl></div>`;
+    if(p.musical_number){
+      const m = p.musical_number;
+      let mb = '<div style="margin-top:10px"><span class="bizhead">Special Musical Number</span><br>';
+      if(m.song) mb += esc(m.song);
+      if(m.singers) mb += (m.song?' &middot; ':'') + esc(m.singers);
+      if(m.accompanied) mb += `<br><span style="color:var(--muted);font-size:.85rem">Accompanied by ${esc(m.accompanied)}</span>`;
+      extra += mb + '</div>';
+    }
+    h.push(sec('Speakers', sp + extra));
+  }
+
+  let cp = '';
+  cp += pair('Closing Hymn', hymnHtml(p.closing_hymn));
+  cp += pair('Benediction', esc(p.benediction));
+  if(cp) h.push(sec('Closing', `<dl class="pairs">${cp}</dl>`));
+  return h.join('');
+}
+
+function currentProgram(){
+  const ps = DATA.programs;
+  if(!ps.length) return null;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const in7 = new Date(today); in7.setDate(in7.getDate()+7);
+  const upcoming = ps.filter(p => { const d = new Date(p.date+'T12:00:00'); return d >= today && d <= in7; })
+                     .sort((a,b)=>a.date<b.date?-1:1);
+  if(upcoming.length) return upcoming[0];
+  return ps[0];
+}
+
+function renderHome(){
+  const p = currentProgram();
+  if(!p) return `<div class="notice">No programs published yet.</div>`;
+  return programHtml(p, true);
+}
+function renderArchive(){
+  const cur = currentProgram();
+  const items = DATA.programs.map(p => {
+    const bits = [];
+    if(p.speakers&&p.speakers.length) bits.push('Speakers: '+p.speakers.map(s=>s.name).join(', '));
+    return `<a class="arch-item ${cur&&p.date===cur.date?'current':''}" href="#/week/${p.date}">
+      <div class="d">${esc(fmtDate(p.date))}</div>
+      <div class="m">${esc(bits[0]||'Sacrament meeting program')}</div></a>`;
+  }).join('');
+  return `<div class="card"><h2 class="sec">Past Programs</h2>${items}</div>`;
+}
+function actRowHtml(r, featured){
+  let g = Object.entries(r.groups||{});
+  if(ACT_FILTER !== 'all') g = g.filter(([k]) => k === ACT_FILTER);
+  const gHtml = g.length ? `<table class="biz">${g.map(([k,v])=>`<tr><td class="role" style="white-space:nowrap">${esc(YW_LABELS[k]?YW_LABELS[k].name:k)}</td><td>${esc(v)}</td></tr>`).join('')}</table>` : `<span class="empty">${ACT_FILTER==='all' ? 'No details listed' : 'Nothing listed for this group'}</span>`;
+  const meta = [r.schedule, r.notes, r.reference].filter(Boolean).map(x=>`<div style="font-size:.85rem;color:var(--muted);margin-top:3px">${esc(x)}</div>`).join('');
+  const st = parseTimeMin(r.schedule);
+  const start = st != null ? st : 19*60;
+  const gnames = Object.keys(r.groups||{}).map(k=>YW_LABELS[k]?YW_LABELS[k].name:k).join(', ');
+  const cal = gcalLink(gcalUrl('Milton Ward Youth Activity', r.date, start, start+60, (r.schedule?r.schedule+'\n':'') + (gnames?('Groups: '+gnames):'')));
+  return `<div class="card">${featured?'<div class="prog-tag">This week</div>':''}
+    <div class="${featured?'prog-date serif':''}" style="${featured?'':'font-family:Georgia,serif;font-size:1.1rem;color:var(--navy)'}">${esc(fmtDate(r.date))}</div>
+    ${meta}
+    <div>${cal}</div>
+    <div style="margin-top:10px">${gHtml}</div></div>`;
+}
+let ACT_FILTER = 'all';
+const ACT_GROUPS = ['YW 12/13','YW 14/15','YW 16+','Deacons','Teachers','Priests'];
+const YW_LABELS = {
+  'YW 12/13': {name:'Builders of Faith', ages:'turning 12 or 13', purpose:"Helps build God's kingdom through her faith in Christ, steadfast witness, and actions that uplift and encourage others."},
+  'YW 14/15': {name:'Messengers of Hope', ages:'turning 14 or 15', purpose:"Carries Christ's message of hope to the weary, speaking peace, sharing comfort, and lifting hearts through the power of the Spirit."},
+  'YW 16+': {name:'Gatherers of Light', ages:'turning 16 or older', purpose:"Focuses on spiritual maturity, honoring covenants, and radiating the light of Christ to gather Israel."}
+};
+function setActFilter(g){ ACT_FILTER = g; document.getElementById('app').innerHTML = renderActivities(); window.scrollTo(0,0); }
+function renderActivities(){
+  const a = DATA.activities;
+  if(!a || !a.rows || !a.rows.length) return `<div class="notice">Weekly activities will appear here soon.</div>`;
+  const chips = `<div class="chips"><button class="${ACT_FILTER==='all'?'on':''}" onclick="setActFilter('all')">Everyone</button>` +
+    ACT_GROUPS.map(g=>{const yl=YW_LABELS[g];return `<button class="${ACT_FILTER===g?'on':''}" onclick="setActFilter('${g}')">${yl?esc(yl.name)+`<span class="chip-sub">${esc(yl.ages)}</span>`:esc(g)}</button>`;}).join('') + `</div>`;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const upcoming = a.rows.filter(r => new Date(r.date+'T12:00:00') >= today);
+  const past = a.rows.filter(r => new Date(r.date+'T12:00:00') < today);
+  let h = `<div class="card" style="text-align:center"><h2 class="sec" style="border:none;margin:0">Youth Weekly Activities</h2>
+    <div style="font-size:.85rem;color:var(--muted)">Builders of Faith &middot; Messengers of Hope &middot; Gatherers of Light &middot; Deacons &middot; Teachers &middot; Priests</div></div>`;
+  h += chips;
+  const ylf = YW_LABELS[ACT_FILTER];
+  if(ylf) h += `<div class="act-purpose">${esc(ylf.name)} &middot; ${esc(ylf.ages)}: ${esc(ylf.purpose)}</div>`;
+  if(upcoming.length){
+    h += actRowHtml(upcoming[0], true);
+    h += upcoming.slice(1,7).map(r=>actRowHtml(r,false)).join('');
+  } else {
+    h += `<div class="notice">No upcoming activities listed.</div>`;
+  }
+  if(past.length){
+    h += `<div class="card"><h2 class="sec">Earlier this year</h2>` +
+      past.slice(-8).reverse().map(r=>`<div class="arch-item" style="cursor:default"><div class="d" style="font-size:.95rem">${esc(fmtDate(r.date))}</div><div class="m">${esc(r.schedule||'')}</div></div>`).join('') + `</div>`;
+  }
+  if(a.sheet_url) h += `<div style="text-align:center"><a href="${esc(a.sheet_url)}" target="_blank" rel="noopener" style="color:var(--navy);font-size:.85rem">Full year schedule</a></div>`;
+  return h;
+}
+function renderAnnouncements(){
+  const p = currentProgram();
+  const anns = p && p.announcements ? p.announcements : [];
+  if(!anns.length) return `<div class="notice">No announcements this week.</div>`;
+  return `<div class="card"><h2 class="sec">Announcements</h2>
+    <div style="font-size:.85rem;color:var(--muted);margin-bottom:8px">For ${esc(fmtDate(p.date))}</div>
+    <ol class="ann">${anns.map(a=>`<li value="${a.num}">${esc(a.text).replace(/\n/g,'<br>')}</li>`).join('')}</ol></div>`;
+}
+function route(){
+  const hash = location.hash.replace(/^#/,'') || '/';
+  const app = document.getElementById('app');
+  document.querySelectorAll('nav.tabs a').forEach(a=>{
+    a.classList.toggle('active', a.dataset.route === (hash.startsWith('/week/') ? '/' : hash));
+  });
+  if(hash === '/') app.innerHTML = renderHome();
+  else if(hash === '/archive') app.innerHTML = renderArchive();
+  else if(hash === '/activities') app.innerHTML = renderActivities();
+  else if(hash === '/announcements') app.innerHTML = renderAnnouncements();
+  else if(hash.startsWith('/week/')){
+    const d = hash.slice(6);
+    const p = DATA.programs.find(x=>x.date===d);
+    app.innerHTML = p ? programHtml(p,false) + `<div style="text-align:center;margin-top:6px"><a href="#/archive" style="color:var(--navy);font-size:.9rem">&larr; All programs</a></div>` : `<div class="notice">Program not found.</div>`;
+  }
+  window.scrollTo(0,0);
+}
+
+const b64 = b => btoa(String.fromCharCode(...new Uint8Array(b)));
+const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+
+async function deriveKey(pw, salt){
+  const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({name:'PBKDF2', salt, iterations:100000, hash:'SHA-256'}, base, {name:'AES-CBC', length:256}, true, ['decrypt']);
+}
+async function tryDecrypt(key, iv, ct){
+  try{
+    const plain = await crypto.subtle.decrypt({name:'AES-CBC', iv}, key, ct);
+    return JSON.parse(new TextDecoder().decode(plain));
+  }catch(e){ return null; }
+}
+function start(d){
+  DATA = d;
+  document.getElementById('gate').remove();
+  document.getElementById('ward').textContent = d.ward_name || 'Milton Ward';
+  const gen = new Date(d.generated_at);
+  document.getElementById('foot').innerHTML =
+    `Updated ${esc(gen.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}))} &middot; Milton Ward &middot; The Church of Jesus Christ of Latter-day Saints`;
+  if(d.calendar_url){
+    const webcal = d.calendar_url.replace(/^https:/, 'webcal:');
+    const cs = document.getElementById('calsub');
+    cs.style.display = 'block';
+    cs.innerHTML = `Ward calendar (programs + youth activities, updates automatically):<br>` +
+      `<a class="calbtn" href="${esc(webcal)}">Subscribe on iPhone / Mac</a>` +
+      `<button class="calbtn" id="calcopy">Copy feed link</button><br>` +
+      `<span style="font-size:.72rem">Google Calendar: Settings &rarr; Add calendar &rarr; From URL &rarr; paste the feed link</span>`;
+    document.getElementById('calcopy').addEventListener('click', async (ev)=>{
+      try{ await navigator.clipboard.writeText(d.calendar_url); ev.target.textContent = 'Copied!'; }
+      catch(e){ window.prompt('Copy the feed link:', d.calendar_url); }
+      setTimeout(()=>{ ev.target.textContent = 'Copy feed link'; }, 2000);
+    });
+  }
+  route();
+}
+async function boot(){
+  let buf;
+  try{ buf = await (await fetch('data.enc')).arrayBuffer(); }
+  catch(e){ document.getElementById('app').innerHTML = `<div class="notice">Could not load program data.</div>`; return; }
+  const bytes = new Uint8Array(buf);
+  const salt = bytes.slice(0,16), iv = bytes.slice(16,32), ct = bytes.slice(32);
+  const saved = sessionStorage.getItem('mwk');
+  if(saved){
+    try{
+      const key = await crypto.subtle.importKey('raw', unb64(saved), 'AES-CBC', true, ['decrypt']);
+      const d = await tryDecrypt(key, iv, ct);
+      if(d){ start(d); return; }
+    }catch(e){}
+    sessionStorage.removeItem('mwk');
+  }
+  document.getElementById('gateform').addEventListener('submit', async (ev)=>{
+    ev.preventDefault();
+    const pw = document.getElementById('gatepw').value;
+    const key = await deriveKey(pw, salt);
+    const d = await tryDecrypt(key, iv, ct);
+    if(d){
+      sessionStorage.setItem('mwk', b64(await crypto.subtle.exportKey('raw', key)));
+      start(d);
+    } else {
+      document.getElementById('gateerr').style.display = 'block';
+      document.getElementById('gatepw').value = '';
+      document.getElementById('gatepw').focus();
+    }
+  });
+}
+boot();
+window.addEventListener('hashchange', route);
+</script>
+</body>
+</html>
