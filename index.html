@@ -279,6 +279,12 @@ function renderActivities(){
   return h;
 }
 function renderAnnouncements(){
+  const secs = DATA.announcement_sections || [];
+  if(secs.length){
+    const head = `<div class="card" style="text-align:center"><h2 class="sec" style="border:none;margin:0">Announcements</h2></div>`;
+    return head + secs.map(sctn => sctn.items.length ? `<div class="card"><h2 class="sec">${esc(sctn.header)}</h2>
+      <ul class="plain">${sctn.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>` : '').join('');
+  }
   const p = currentProgram();
   const anns = p && p.announcements ? p.announcements : [];
   if(!anns.length) return `<div class="notice">No announcements this week.</div>`;
