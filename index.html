@@ -30,9 +30,6 @@
   .prog-tag{text-align:center;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
   .gcal{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;margin-top:4px}
   .gcal:hover{text-decoration:underline}
-  .sacrament-stream{text-align:center;margin-top:7px;font-size:.84rem;color:var(--muted)}
-  .sacrament-stream a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
-  .sacrament-stream a:hover{border-bottom-color:var(--navy)}
   .rule{text-align:center;color:var(--gold);margin:8px 0 2px;font-size:.9rem}
   dl.pairs{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin-top:10px}
   dl.pairs dt{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:2px;white-space:nowrap}
@@ -152,8 +149,7 @@ function programHtml(p, isCurrent){
   h.push(`<div class="card">`);
   if(isCurrent) h.push(`<div class="prog-tag">This Sunday</div>`);
   h.push(`<div class="prog-date serif">${esc(fmtDate(p.date))}</div>`);
-  h.push(`<div style="text-align:center">${gcalLink(gcalUrl('Milton Ward Sacrament Meeting', p.date, 9*60, 10*60+30, 'Sacrament meeting - full program at https://miltonward.com/'))}</div>`);
-  h.push(`<div class="sacrament-stream"><a href="https://zoom.us/j/98729762704?pwd=DdGFWhOYHIcegHmPBGOcHGk5PYLke8.1" target="_blank" rel="noopener">Join sacrament meeting on Zoom</a></div>`);
+  h.push(`<div style="text-align:center"><a class="gcal" href="https://zoom.us/j/98729762704?pwd=DdGFWhOYHIcegHmPBGOcHGk5PYLke8.1" target="_blank" rel="noopener">Join on Zoom</a></div>`);
   h.push(`<div class="rule">&#10038;</div>`);
   let pairs = '';
   pairs += pair('Presiding', esc(p.presiding));
