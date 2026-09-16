@@ -246,6 +246,23 @@ def parse_program(ws):
                 elif re.match(r'^accompan', t, re.I): entry['accompanied'] = g.right_of(rr, cc)
         entry = {k: v for k, v in entry.items() if v}
         if entry: prog['musical_number'] = entry
+
+    # The agenda sheet is the source of truth for the order between the
+    # sacrament and closing hymn. Keep each populated item at its sheet row
+    # instead of grouping all speakers ahead of the intermediate music.
+    ordered = []
+    for n in (1, 2, 3, 4):
+        sp = g.find(rf'^speaker {n}\s*:')
+        if sp:
+            v = g.right_of(sp[0], sp[1])
+            if v: ordered.append((sp[0], {'type': 'speaker', 'n': n, 'name': v}))
+    if ih and prog.get('intermediate_hymn'):
+        ordered.append((ih[0], {'type': 'hymn', 'label': 'Intermediate Hymn',
+                                'hymn': prog['intermediate_hymn']}))
+    if mn and prog.get('musical_number'):
+        ordered.append((mn[0], {'type': 'musical_number', **prog['musical_number']}))
+    if ordered:
+        prog['program_order'] = [item for _, item in sorted(ordered, key=lambda x: x[0])]
     if cl: prog['closing_hymn'] = parse_hymn(g, cl[0])
     if be: prog['benediction'] = g.right_of(be[0], be[1])
     return prog
