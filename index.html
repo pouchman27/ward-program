@@ -180,18 +180,26 @@ function programHtml(p, isCurrent){
   sac += pair('Sacrament Hymn', hymnHtml(p.sacrament_hymn));
   if(sac) h.push(sec('Sacrament', `<dl class="pairs">${sac}</dl><div style="margin-top:10px;color:var(--muted);font-size:.9rem">Administration of the Sacrament</div>`));
 
-  if(p.speakers && p.speakers.length){
+  if(p.program_order && p.program_order.length){
+    const items = p.program_order.map((x, i) => {
+      const space = i ? ' style="margin-top:12px"' : '';
+      if(x.type === 'speaker') return `<div class="speaker"${space}><span class="ord serif">${x.n}</span><span>${esc(x.name)}</span></div>`;
+      if(x.type === 'hymn') return `<div${space}><dl class="pairs">${pair(x.label || 'Hymn', hymnHtml(x.hymn))}</dl></div>`;
+      if(x.type === 'musical_number'){
+        let mb = `<div${space}><span class="bizhead">Special Musical Number</span><br>`;
+        if(x.song) mb += esc(x.song);
+        if(x.singers) mb += (x.song?' &middot; ':'') + esc(x.singers);
+        if(x.accompanied) mb += `<br><span style="color:var(--muted);font-size:.85rem">Accompanied by ${esc(x.accompanied)}</span>`;
+        return mb + '</div>';
+      }
+      return '';
+    }).join('');
+    h.push(sec('Program', items));
+  } else if(p.speakers && p.speakers.length){
+    // Backward compatibility for payloads made before ordered programs.
     const sp = p.speakers.map(x => `<div class="speaker"><span class="ord serif">${x.n}</span><span>${esc(x.name)}</span></div>`).join('');
     let extra = '';
     if(p.intermediate_hymn) extra += `<div style="margin-top:10px"><dl class="pairs">${pair('Intermediate Hymn', hymnHtml(p.intermediate_hymn))}</dl></div>`;
-    if(p.musical_number){
-      const m = p.musical_number;
-      let mb = '<div style="margin-top:10px"><span class="bizhead">Special Musical Number</span><br>';
-      if(m.song) mb += esc(m.song);
-      if(m.singers) mb += (m.song?' &middot; ':'') + esc(m.singers);
-      if(m.accompanied) mb += `<br><span style="color:var(--muted);font-size:.85rem">Accompanied by ${esc(m.accompanied)}</span>`;
-      extra += mb + '</div>';
-    }
     h.push(sec('Speakers', sp + extra));
   }
 
