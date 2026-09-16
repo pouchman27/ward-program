@@ -1,0 +1,37 @@
+name: Publish Milton Ward program
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: ward-program-publisher
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install build dependencies
+        run: pip install -r requirements.txt
+      - name: Build encrypted site data
+        env:
+          WARD_SITE_PASSPHRASE: ${{ secrets.WARD_SITE_PASSPHRASE }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: ./build_site.sh
+      - name: Publish changed output
+        run: |
+          if git diff --quiet -- data.enc cal-*.ics; then
+            echo 'No published data changed.'
+            exit 0
+          fi
+          git config user.name 'Milton Ward publisher'
+          git config user.email 'pouchman27@users.noreply.github.com'
+          git add data.enc cal-*.ics
+          git commit -m "Update program data $(date -u +%F)"
+          git push
