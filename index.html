@@ -342,7 +342,7 @@ function start(d){
     const webcal = d.calendar_url.replace(/^https:/, 'webcal:');
     const cs = document.getElementById('calsub');
     cs.style.display = 'block';
-    cs.innerHTML = `Ward calendar (programs + youth activities, updates automatically):<br>` +
+    cs.innerHTML = `Ward calendar <strong style="color:var(--gold)">(in testing)</strong> - programs + youth activities, updates automatically:<br>` +
       `<a class="calbtn" href="${esc(webcal)}">Subscribe on iPhone / Mac</a>` +
       `<button class="calbtn" id="calcopy">Copy feed link</button><br>` +
       `<span style="font-size:.72rem">Google Calendar: Settings &rarr; Add calendar &rarr; From URL &rarr; paste the feed link</span>`;
