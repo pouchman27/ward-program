@@ -178,7 +178,7 @@ function programHtml(p, isCurrent){
 
   let sac = '';
   sac += pair('Sacrament Hymn', hymnHtml(p.sacrament_hymn));
-  if(sac) h.push(sec('Sacrament', `<dl class="pairs">${sac}</dl><div style="margin-top:10px;color:var(--muted);font-size:.9rem">Administration of the Sacrament</div>`));
+  if(sac) h.push(sec('Sacrament', `<dl class="pairs">${sac}${pair('Administration of the Sacrament', '&nbsp;')}</dl>`));
 
   if(p.program_order && p.program_order.length){
     const items = p.program_order.map((x, i) => {
