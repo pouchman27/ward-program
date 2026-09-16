@@ -183,7 +183,7 @@ function programHtml(p, isCurrent){
   if(p.program_order && p.program_order.length){
     const items = p.program_order.map((x, i) => {
       const space = i ? ' style="margin-top:12px"' : '';
-      if(x.type === 'speaker') return `<div class="speaker"${space}><span class="ord serif">${x.n}</span><span>${esc(x.name)}</span></div>`;
+      if(x.type === 'speaker') return `<div${space}><dl class="pairs">${pair('Speaker', esc(x.name))}</dl></div>`;
       if(x.type === 'hymn') return `<div${space}><dl class="pairs">${pair(x.label || 'Hymn', hymnHtml(x.hymn))}</dl></div>`;
       if(x.type === 'musical_number'){
         let mb = `<div${space}><span class="bizhead">Special Musical Number</span><br>`;
