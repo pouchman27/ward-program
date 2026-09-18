@@ -81,7 +81,11 @@ def parse_hymn(g, row):
     num = re.sub(r'\.0$', '', num)
     if not (num or title): return None
     out = {'number': num, 'title': title}
-    if num and str(num) in HYMN_URLS: out['url'] = HYMN_URLS[str(num)]
+    if num:
+        url = HYMN_URLS.get(str(num))
+        if not url:
+            raise ValueError(f'No official Church link mapped for hymn #{num}: {title}')
+        out['url'] = url
     return out
 
 def parse_announcements(g, r_start, r_end):
