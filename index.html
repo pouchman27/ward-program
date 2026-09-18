@@ -34,7 +34,7 @@
   dl.pairs{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin-top:10px}
   dl.pairs dt{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:2px;white-space:nowrap}
   dl.pairs dd{font-size:1rem;min-width:0}
-  .administration{text-align:center;font-family:Georgia,serif;font-size:1.08rem;color:var(--navy);padding:8px 10px 20px}
+  .administration{text-align:center;font-family:Georgia,serif;font-size:1.08rem;color:var(--navy);padding:18px 16px}
   h2.sec{font-family:Georgia,serif;font-weight:normal;font-size:1.08rem;color:var(--navy);
     border-bottom:1px solid var(--line);padding-bottom:6px;margin:4px 0 10px}
   .hymn{font-size:1rem}
@@ -179,7 +179,7 @@ function programHtml(p, isCurrent){
     h.push(sec('Baby Blessing', `<ul class="plain">${p.baby_blessing.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`));
   }
 
-  if(p.sacrament_hymn) h.push(`<div class="administration">Administration of the Sacrament</div>`);
+  if(p.sacrament_hymn) h.push(`<div class="card administration">Administration of the Sacrament</div>`);
 
   if(p.program_order && p.program_order.length){
     const items = p.program_order.map((x, i) => {
