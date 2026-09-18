@@ -53,7 +53,9 @@
   table.biz td.role{color:var(--muted)}
   .bizgrid{display:grid;grid-template-columns:1fr;gap:14px}
   .bizhead{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-  .ordered-hymn .hymn-value{padding-left:14px}
+  .ordered-hymn{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+  .ordered-hymn .bizhead{line-height:1.45;white-space:nowrap}
+  .ordered-hymn .hymn-value{min-width:0}
   .speaker{display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line)}
   .speaker:last-child{border-bottom:none}
   .speaker .ord{font-family:Georgia,serif;color:var(--gold);min-width:20px;text-align:center}
@@ -185,7 +187,7 @@ function programHtml(p, isCurrent){
     const items = p.program_order.map((x, i) => {
       const space = i ? ' style="margin-top:12px"' : '';
       if(x.type === 'speaker') return `<div${space}><dl class="pairs">${pair('Speaker', esc(x.name))}</dl></div>`;
-      if(x.type === 'hymn') return `<div class="ordered-hymn"${space}><div class="bizhead">${esc(x.label || 'Hymn')}</div><div class="hymn-value">${hymnHtml(x.hymn)}</div></div>`;
+      if(x.type === 'hymn') return `<div class="ordered-hymn"${space}><div class="bizhead">Intermediate<br>Hymn</div><div class="hymn-value">${hymnHtml(x.hymn)}</div></div>`;
       if(x.type === 'musical_number'){
         let mb = `<div${space}><span class="bizhead">Special Musical Number</span><br>`;
         if(x.song) mb += esc(x.song);
