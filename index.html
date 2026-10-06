@@ -272,9 +272,9 @@ function actRowHtml(r, featured){
 let ACT_FILTER = 'all';
 const ACT_GROUPS = ['YW 12/13','YW 14/15','YW 16+','Deacons','Teachers','Priests'];
 const YW_LABELS = {
-  'YW 12/13': {name:'Builders of Faith', ages:'turning 12 or 13', purpose:"Helps build God's kingdom through her faith in Christ, steadfast witness, and actions that uplift and encourage others."},
-  'YW 14/15': {name:'Messengers of Hope', ages:'turning 14 or 15', purpose:"Carries Christ's message of hope to the weary, speaking peace, sharing comfort, and lifting hearts through the power of the Spirit."},
-  'YW 16+': {name:'Gatherers of Light', ages:'turning 16 or older', purpose:"Focuses on spiritual maturity, honoring covenants, and radiating the light of Christ to gather Israel."}
+  'YW 12/13': {name:'Builders of Faith', ages:'turning 12 or 13'},
+  'YW 14/15': {name:'Messengers of Hope', ages:'turning 14 or 15'},
+  'YW 16+': {name:'Gatherers of Light', ages:'turning 16 or older'}
 };
 function setActFilter(g){ ACT_FILTER = g; document.getElementById('app').innerHTML = renderActivities(); window.scrollTo(0,0); }
 function renderActivities(){
@@ -289,7 +289,7 @@ function renderActivities(){
     <div style="font-size:.85rem;color:var(--muted)">Builders of Faith &middot; Messengers of Hope &middot; Gatherers of Light &middot; Deacons &middot; Teachers &middot; Priests</div></div>`;
   h += chips;
   const ylf = YW_LABELS[ACT_FILTER];
-  if(ylf) h += `<div class="act-purpose">${esc(ylf.name)} &middot; ${esc(ylf.ages)}: ${esc(ylf.purpose)}</div>`;
+  if(ylf) h += `<div class="act-purpose">${esc(ylf.name)} &middot; ${esc(ylf.ages)}</div>`;
   if(upcoming.length){
     h += actRowHtml(upcoming[0], true);
     h += upcoming.slice(1,7).map(r=>actRowHtml(r,false)).join('');
