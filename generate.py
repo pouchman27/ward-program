@@ -424,21 +424,17 @@ def main():
         except Exception as e:
             print(f'WARN: failed tab {name}: {e}', file=sys.stderr)
     programs.sort(key=lambda p: p['date'], reverse=True)
-    adv = {}
-    if '2026 Advancements' in wb.sheetnames:
-        try: adv = parse_advancements(Grid(wb['2026 Advancements']))
-        except Exception as e: print(f'WARN advancements: {e}', file=sys.stderr)
     act = None
     act_path = '/tmp/activities.xlsx'
     if os.path.exists(act_path):
-        try: act = parse_activities(act_path)
+        try:
+            act = parse_activities(act_path)
+            if act: act.pop('sheet_url', None)
         except Exception as e: print(f'WARN activities: {e}', file=sys.stderr)
     data = {
         'generated_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'ward_name': 'Milton Ward',
-        'sheet_url': SHEET_URL,
         'programs': programs,
-        'advancements': adv,
         'activities': act,
     }
     ann_path = '/tmp/announcement_sections.json'
@@ -466,7 +462,9 @@ def main():
         f.write(salt + iv + enc)
     if os.path.exists(OUT):  # never publish plaintext
         os.remove(OUT)
+    assert 'advancements' not in data and 'sheet_url' not in data and 'sheet_url' not in (data.get('activities') or {})
     print(f'OK: {len(programs)} programs, encrypted payload at {enc_path}, calendar at site/{cal_name}')
 
 if __name__ == '__main__':
     main()
+
