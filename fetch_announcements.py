@@ -21,5 +21,9 @@ for body in bodies(d):
   t=text(p); style=p.get('paragraphStyle',{}).get('namedStyleType','')
   if style=='HEADING_1' and t: cur={'header':t,'items':[]}; sections.append(cur)
   elif cur and t: cur['items'].append(t)
+from prune import prune
+sections, dropped = prune(sections)
+for t in dropped: print('pruned stale announcement:', t[:100])
 json.dump(sections,open(OUT,'w'))
-print(f'announcements: {len(sections)} sections')
+print(f'announcements: {len(sections)} sections, {len(dropped)} stale items pruned')
+
