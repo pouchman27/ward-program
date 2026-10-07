@@ -25,3 +25,11 @@ jobs:
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
         run: python3 sync_job.py
+      - name: Validate clean reader and encrypted preview (no publication)
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          WARD_SITE_PASSPHRASE: ${{ secrets.WARD_SITE_PASSPHRASE }}
+        run: |
+          ./build_site.sh
+          test -s data.enc
+          test -s cal-9541feda7b84bf953efa2cf47305248ec3ca90d9673d8fa1baea79aa47012831.ics
