@@ -43,3 +43,5 @@ def main():
     if os.environ.get('GITHUB_STEP_SUMMARY'): open(os.environ['GITHUB_STEP_SUMMARY'],'a').write(summary+'\n')
     for e in errors: print('::warning::'+e)
 if __name__=='__main__': main()
+
+# Invalid rows are never cleared from the middleware sheets.
