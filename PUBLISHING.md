@@ -1,10 +1,12 @@
-# Publishing
+# Ward publishing
 
-`.github/workflows/publish.yml` checks the source sheets and announcements Doc hourly and republishes encrypted `data.enc` only when output changes. It can also be run manually.
+The site publisher reads only:
+- Milton Ward Sacrament_website
+- Milton Ward Activities_website
+- the Announcements Doc
 
-Repository Actions secrets required:
+The middleware sync is a separate Actions workflow. It reads the old workbooks and copies only the named public columns into the private sheets. Dates older than 14 days are frozen. Invalid tabs retain their last good row and produce a workflow warning. An unreadable source or mismatched table header stops the job before publication. No source links are included in the site's payload.
 
-- `WARD_SITE_PASSPHRASE`: site passphrase
-- `GOOGLE_SERVICE_ACCOUNT_JSON`: a Google service-account key JSON. Share the announcements Doc with the service account's `client_email` as Viewer.
+The publisher keeps the password gate, noindex, hymn links, meeting order, stable calendar feed, and announcement graveyard rules. A failed read or invalid clean table fails the build without replacing the live encrypted data.
 
-The existing unguessable `.ics` filename is preserved by `build_site.sh`.
+For cutover: run the middleware sync on this branch, inspect its summary, run a preview, compare rendered fields and calendar URL, then merge only after owner approval. The current production source path stays unchanged until that merge.
