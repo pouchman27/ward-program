@@ -306,16 +306,30 @@ function renderActivities(){
   return h;
 }
 function renderAnnouncementItem(text){
-  const match = text.match(/https?:\/\/[^\s<>]+/g)?.find(raw => {
-    try { const host = new URL(raw).hostname.toLowerCase(); return host === 'signupgenius.com' || host.endsWith('.signupgenius.com'); }
-    catch { return false; }
-  });
-  if(!match) return esc(text);
-  const cleaned = text.replace(match, '').replace(/\s*Sign up:\s*(?=$|\n)/i, '').trim();
-  // Link the existing event title, keeping the date, place, and details below it.
-  const split = cleaned.indexOf(' - ');
-  const title = split > 0 ? cleaned.slice(0, split) : cleaned;
-  return `${esc(cleaned)}<br><a class="announcement-link" href="${esc(match)}" target="_blank" rel="noopener noreferrer">Sign up - ${esc(title)}</a>`;
+  const urls = text.match(/https?:\/\/[^\s<>]+/g) || [];
+  const links = []; let cleaned = text;
+  for(const raw of urls){
+    let url; try { url = new URL(raw); } catch { continue; }
+    if(!['https:','http:'].includes(url.protocol)) continue;
+    const prefix = text.slice(0, text.indexOf(raw));
+    const cueMatch = prefix.match(/([^.!?\n:]+):\s*$/);
+    const cue = cueMatch ? cueMatch[1].trim() : '';
+    const host = url.hostname.toLowerCase();
+    let label = /submission form/i.test(cue) ? 'Submission form' :
+      /sign.?up/i.test(cue) || host === 'signupgenius.com' || host.endsWith('.signupgenius.com') ? 'Sign up' :
+      /registration|register/i.test(cue) ? 'Register' :
+      /release form/i.test(cue) ? 'Release form' :
+      cue || 'Link';
+    links.push({href:raw,label});
+    cleaned = cleaned.replace(raw,'');
+    if(cue) cleaned = cleaned.replace(cue + ':','');
+  }
+  if(!links.length) return esc(text);
+  cleaned = cleaned.trim();
+  // Use the announcement's own title words, never the URL or destination metadata.
+  const dash = cleaned.indexOf(' - ');
+  const title = dash > 0 ? cleaned.slice(0,dash) : cleaned.split(/\.\s|\n/)[0].trim();
+  return esc(cleaned) + links.map(link => `<br><a class="announcement-link" href="${esc(link.href)}" target="_blank" rel="noopener noreferrer">${esc(link.label)} - ${esc(title)}</a>`).join('');
 }
 function renderAnnouncements(){
   const secs = DATA.announcement_sections || [];
@@ -329,7 +343,7 @@ function renderAnnouncements(){
   if(!anns.length) return `<div class="notice">No announcements this week.</div>`;
   return `<div class="card"><h2 class="sec">Announcements</h2>
     <div style="font-size:.85rem;color:var(--muted);margin-bottom:8px">For ${esc(fmtDate(p.date))}</div>
-    <ol class="ann">${anns.map(a=>`<li value="${a.num}">${esc(a.text).replace(/\n/g,'<br>')}</li>`).join('')}</ol></div>`;
+    <ol class="ann">${anns.map(a=>`<li value="${a.num}">${renderAnnouncementItem(a.text).replace(/\n/g,'<br>')}</li>`).join('')}</ol></div>`;
 }
 function route(){
   const hash = location.hash.replace(/^#/,'') || '/';
