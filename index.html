@@ -315,8 +315,7 @@ function renderAnnouncementItem(text){
   // Link the existing event title, keeping the date, place, and details below it.
   const split = cleaned.indexOf(' - ');
   const title = split > 0 ? cleaned.slice(0, split) : cleaned;
-  const details = split > 0 ? cleaned.slice(split) : '';
-  return `<a class="announcement-link" href="${esc(match)}" target="_blank" rel="noopener noreferrer">Sign up - ${esc(title)}</a>${esc(details)}`;
+  return `${esc(cleaned)}<br><a class="announcement-link" href="${esc(match)}" target="_blank" rel="noopener noreferrer">Sign up - ${esc(title)}</a>`;
 }
 function renderAnnouncements(){
   const secs = DATA.announcement_sections || [];
