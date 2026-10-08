@@ -105,6 +105,7 @@
   #gate .err{color:#a33;font-size:.85rem;margin-top:10px;display:none}
   @media print{nav.tabs,footer{display:none}body{background:#fff}.card{border:none;box-shadow:none}}
 ul.plain li,ol.ann li { overflow-wrap:anywhere; }
+a.announcement-link { color:var(--navy); text-underline-offset:3px; }
 </style>
 </head>
 <body>
@@ -304,12 +305,25 @@ function renderActivities(){
   if(a.sheet_url) h += `<div style="text-align:center"><a href="${esc(a.sheet_url)}" target="_blank" rel="noopener" style="color:var(--navy);font-size:.85rem">Full year schedule</a></div>`;
   return h;
 }
+function renderAnnouncementItem(text){
+  const match = text.match(/https?:\/\/[^\s<>]+/g)?.find(raw => {
+    try { const host = new URL(raw).hostname.toLowerCase(); return host === 'signupgenius.com' || host.endsWith('.signupgenius.com'); }
+    catch { return false; }
+  });
+  if(!match) return esc(text);
+  const cleaned = text.replace(match, '').replace(/\s*Sign up:\s*(?=$|\n)/i, '').trim();
+  // Link the existing event title, keeping the date, place, and details below it.
+  const split = cleaned.indexOf(' - ');
+  const title = split > 0 ? cleaned.slice(0, split) : cleaned;
+  const details = split > 0 ? cleaned.slice(split) : '';
+  return `<a class="announcement-link" href="${esc(match)}" target="_blank" rel="noopener noreferrer">${esc(title)}</a>${esc(details)}`;
+}
 function renderAnnouncements(){
   const secs = DATA.announcement_sections || [];
   if(secs.length){
     const head = `<div class="card" style="text-align:center"><h2 class="sec" style="border:none;margin:0">Announcements</h2></div>`;
     return head + secs.map(sctn => sctn.items.length ? `<div class="card"><h2 class="sec">${esc(sctn.header)}</h2>
-      <ul class="plain">${sctn.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>` : '').join('');
+      <ul class="plain">${sctn.items.map(i=>`<li>${renderAnnouncementItem(i)}</li>`).join('')}</ul></div>` : '').join('');
   }
   const p = currentProgram();
   const anns = p && p.announcements ? p.announcements : [];
