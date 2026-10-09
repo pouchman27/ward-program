@@ -441,6 +441,8 @@ def main():
     if os.path.exists(ann_path):
         try: data['announcement_sections'] = json.load(open(ann_path))
         except Exception as e: print(f'WARN announcement sections: {e}', file=sys.stderr)
+    from folded_program import add_printable
+    add_printable(data, SITE_PASSPHRASE)
     cal_name = write_calendar(programs, act, data)
     with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cal_events.json'), 'w') as f:
         json.dump(cal_event_manifest(programs, act), f, indent=1)
@@ -467,4 +469,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
