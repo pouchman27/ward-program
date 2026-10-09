@@ -303,19 +303,33 @@ function renderActivities(){
   if(a.sheet_url) h += `<div style="text-align:center"><a href="${esc(a.sheet_url)}" target="_blank" rel="noopener" style="color:var(--navy);font-size:.85rem">Full year schedule</a></div>`;
   return h;
 }
+function printableFooter(p){
+  const pdfs = DATA.printable_programs || {};
+  if(!p || !pdfs[p.date]) return '';
+  return `<div class="card" style="text-align:center"><h2 class="sec">Printable program</h2><div>${esc(fmtDate(p.date))}</div><button class="calbtn" onclick="downloadProgram('${esc(p.date)}')">Download folded PDF</button><div style="font-size:.8rem;color:var(--muted)">Letter landscape, double-sided, flip on short edge</div></div>`;
+}
+function downloadProgram(date){
+  const raw = atob((DATA.printable_programs || {})[date] || '');
+  if(!raw) return;
+  const bytes = Uint8Array.from(raw, c=>c.charCodeAt(0));
+  const url = URL.createObjectURL(new Blob([bytes],{type:'application/pdf'}));
+  const a = document.createElement('a'); a.href=url; a.download=`milton-ward-program-${date}.pdf`; a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),60000);
+}
 function renderAnnouncements(){
+  const pdf = printableFooter(currentProgram());
   const secs = DATA.announcement_sections || [];
   if(secs.length){
     const head = `<div class="card" style="text-align:center"><h2 class="sec" style="border:none;margin:0">Announcements</h2></div>`;
     return head + secs.map(sctn => sctn.items.length ? `<div class="card"><h2 class="sec">${esc(sctn.header)}</h2>
-      <ul class="plain">${sctn.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>` : '').join('');
+      <ul class="plain">${sctn.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>` : '').join('') + pdf;
   }
   const p = currentProgram();
   const anns = p && p.announcements ? p.announcements : [];
-  if(!anns.length) return `<div class="notice">No announcements this week.</div>`;
+  if(!anns.length) return `<div class="notice">No announcements this week.</div>` + pdf;
   return `<div class="card"><h2 class="sec">Announcements</h2>
     <div style="font-size:.85rem;color:var(--muted);margin-bottom:8px">For ${esc(fmtDate(p.date))}</div>
-    <ol class="ann">${anns.map(a=>`<li value="${a.num}">${esc(a.text).replace(/\n/g,'<br>')}</li>`).join('')}</ol></div>`;
+    <ol class="ann">${anns.map(a=>`<li value="${a.num}">${esc(a.text).replace(/\n/g,'<br>')}</li>`).join('')}</ol></div>` + pdf;
 }
 function route(){
   const hash = location.hash.replace(/^#/,'') || '/';
@@ -330,7 +344,7 @@ function route(){
   else if(hash.startsWith('/week/')){
     const d = hash.slice(6);
     const p = DATA.programs.find(x=>x.date===d);
-    app.innerHTML = p ? programHtml(p,false) + `<div style="text-align:center;margin-top:6px"><a href="#/archive" style="color:var(--navy);font-size:.9rem">&larr; All programs</a></div>` : `<div class="notice">Program not found.</div>`;
+    app.innerHTML = p ? programHtml(p,false) + printableFooter(p) + `<div style="text-align:center;margin-top:6px"><a href="#/archive" style="color:var(--navy);font-size:.9rem">&larr; All programs</a></div>` : `<div class="notice">Program not found.</div>`;
   }
   window.scrollTo(0,0);
 }
