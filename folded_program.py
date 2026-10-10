@@ -1,4 +1,4 @@
-"""Build complete weekly folded programs inside the encrypted site payload."""
+"""Build current weekly folded programs inside the encrypted site payload."""
 import base64, datetime, io, os, re
 from xml.sax.saxutils import escape
 from reportlab.pdfgen import canvas
@@ -23,6 +23,7 @@ def complete(p):
     return not m or bool(m.get('song') and m.get('singers'))
 
 def build(p,data,pin):
+    draft=not complete(p)
     for name,path in [('Serif','/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf'),('Sans','/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf'),('SansBold','/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf')]:
         if name not in pdfmetrics.getRegisteredFontNames():
             if not os.path.exists(path):path=path.replace('/liberation/','/liberation2/')
@@ -66,32 +67,35 @@ def build(p,data,pin):
     image=ImageReader(imagepath);iw,ih=image.getSize();dw=300;dh=dw*ih/iw;bottom=155+(312-dh)/2
     c.drawImage(image,x+(CW-dw)/2,bottom,width=dw,height=dh)
     c.setFont('Sans',7.4);c.drawCentredString(x+CW/2,bottom-15,'The Good Shepherd');c.drawCentredString(x+CW/2,bottom-26,'Del Parson')
-    footer(x,'SACRAMENT MEETING PROGRAM');c.showPage();crease()
+    footer(x,'WORKING DRAFT - PRAYERS NOT YET SET' if draft else 'SACRAMENT MEETING PROGRAM');c.showPage();crease()
     y=title(0,H-40,'Sacrament meeting','Sunday, '+label)
     for role,k in [('Presiding','presiding'),('Conducting','conducting'),('Organist','organist'),('Chorister','chorister')]: pair(y,role,p[k],9.8);y-=15.5
     y-=14
-    agenda=[('Opening hymn',hymn(p['opening_hymn'])),('Invocation',p['invocation']),('Sacrament hymn',hymn(p['sacrament_hymn'])),('', 'Administration of the Sacrament')]
+    agenda=[('Opening hymn',hymn(p['opening_hymn'])),('Invocation',p.get('invocation','') or '____________________'),('Sacrament hymn',hymn(p['sacrament_hymn'])),('', 'Administration of the Sacrament')]
     for a in p['program_order']:
         if a['type']=='speaker': agenda.append(('' if a['name'].lower()=='bishop comments' else 'Speaker',a['name']))
         elif a['type']=='hymn': agenda.append(('Intermediate hymn',hymn(a['hymn'])))
         elif a['type']=='musical_number': agenda.append(('Musical number',a['song']));agenda.append(('Performed by',a['singers']))
-    agenda.extend([('Closing hymn',hymn(p['closing_hymn'])),('Benediction',p['benediction'])])
+    agenda.extend([('Closing hymn',hymn(p['closing_hymn'])),('Benediction',p.get('benediction','') or '____________________')])
     for role,item in agenda:
         if role: pair(y,role,item);y-=24
         else: y-=10;c.setFillColor(MUTED);c.setFont('Sans',9.2);c.drawCentredString(CW/2,y,item);y-=24
     if y<47: raise ValueError('Agenda exceeds printable page')
-    footer(0,'');x=CW;y=title(x,H-40,'Announcements',day.strftime('%B %-d')+'-'+str(end.day)+' & upcoming')
+    footer(0,'WORKING DRAFT - PRAYERS NOT YET SET' if draft else '');x=CW;y=title(x,H-40,'Announcements',day.strftime('%B %-d')+'-'+str(end.day)+' & upcoming')
     def sub(y,text):
         c.setFillColor(NAVY);c.setFont('SansBold',9);c.drawString(x+IN,y,text.upper());return y-13
     def qrrow(y,text,url,caption):
         q=qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M,box_size=12,border=4);q.add_data(url);q.make(fit=True)
         img=io.BytesIO();q.make_image(fill_color='black',back_color='white').save(img,format='PNG');img.seek(0)
-        size=80;yp=para(x,y,text,width=PW-size-9,gap=0);c.drawImage(ImageReader(img),x+CW-IN-size,y-size,width=size,height=size)
+        size=70;yp=para(x,y,text,width=PW-size-9,gap=0);c.drawImage(ImageReader(img),x+CW-IN-size,y-size,width=size,height=size)
         sty=ParagraphStyle('label',parent=body,fontName='SansBold',fontSize=8,leading=9.5,alignment=1,textColor=NAVY)
         obj=Paragraph(escape(caption),sty);_,lh=obj.wrap(size,100);obj.drawOn(c,x+CW-IN-size,y-size-3-lh)
         return min(yp,y-size-3-lh)-3
     y=qrrow(y,'<b>Milton Ward online</b><br/>Scan for programs, announcements and youth activities.<br/>miltonward.com<br/>PIN: <b>'+escape(pin)+'</b> (case-sensitive).','https://miltonward.com','Ward website')
     y=sub(y,'This week')
+    for a in p.get('announcements',[]):
+        t=a.get('text','')
+        if t and 'trunk or treat' not in t.lower(): y=para(x,y,escape(t),gap=4)
     for a in (data.get('activities') or {}).get('rows',[]):
         if p['date']<=a['date']<=end.isoformat():
             ad=datetime.date.fromisoformat(a['date']);text=a.get('reference') or a.get('schedule') or ''
@@ -141,13 +145,11 @@ def add_printable(data,pin):
     future=[p for p in data['programs'] if p['date']>='2026-10-11']
     if future:
         p=max(future,key=lambda q:q['date'])
-        import json
-        approval_path=os.path.join(BASE,'printable_approvals.json')
-        approvals=json.load(open(approval_path)) if os.path.exists(approval_path) else {}
-        if complete(p) and approvals.get(p['date'])==program_fingerprint(p,data):
+        # Publish source changes immediately, including visibly unfinished drafts.
+        if all(p.get(k) and p[k].get('number') and p[k].get('title') for k in ('opening_hymn','sacrament_hymn','closing_hymn')) and p.get('program_order'):
             try:pdfs[p['date']]=base64.b64encode(build(p,data,pin)).decode()
             except ValueError as e:
                 pdfs.pop(p['date'],None)
                 print('PRINTABLE REVIEW REQUIRED:',p['date'],e)
-        elif not complete(p): pdfs.pop(p['date'],None)
+        else: pdfs.pop(p['date'],None)
     data['printable_programs']=pdfs
