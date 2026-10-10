@@ -307,7 +307,8 @@ function printableFooter(p){
   const pdfs = DATA.printable_programs || {};
   if(!p || !pdfs[p.date]) return '';
   const provisional = !p.invocation?.trim() || !p.benediction?.trim() || /placeholder|filler|tbd|provisional/i.test((p.invocation||" ")+" "+(p.benediction||" "));
-  return `<div class="card" style="text-align:center"><h2 class="sec">Printable program</h2><div>${esc(fmtDate(p.date))}</div><button class="calbtn" onclick="downloadProgram('${esc(p.date)}')">Download folded PDF</button>${provisional ? '<div style="font-size:.85rem;margin-top:8px">Placeholder prayers this week</div>' : ''}<div style="font-size:.8rem;color:var(--muted)">Letter landscape, double-sided, flip on short edge</div></div>`;
+  const incomplete = provisional || !['presiding','conducting','organist','chorister'].every(k=>p[k]?.trim()) || !['opening_hymn','sacrament_hymn','closing_hymn'].every(k=>p[k]?.number && p[k]?.title) || !p.program_order?.length || (p.musical_number && (!p.musical_number.song || !p.musical_number.singers));
+  return `<div class="card" style="text-align:center"><h2 class="sec">Printable program</h2><div>${esc(fmtDate(p.date))}</div><button class="calbtn" onclick="downloadProgram('${esc(p.date)}')">Download folded PDF</button>${incomplete ? `<div style="font-size:.85rem;margin-top:8px">In progress${provisional ? ' - placeholder prayers this week' : ''}</div>` : ''}<div style="font-size:.8rem;color:var(--muted)">Letter landscape, double-sided, flip on short edge</div></div>`;
 }
 function downloadProgram(date){
   const raw = atob((DATA.printable_programs || {})[date] || '');
@@ -317,20 +318,32 @@ function downloadProgram(date){
   const a = document.createElement('a'); a.href=url; a.download=`milton-ward-program-${date}.pdf`; a.click();
   setTimeout(()=>URL.revokeObjectURL(url),60000);
 }
+function announcementHtml(text){
+  const urls = [...new Set(text.match(/https?:\/\/[^\s<>]+/g) || [])];
+  const clean = text.replace(/https?:\/\/[^\s<>]+/g,'').replace(/(?:Sign up:|Guidelines and submission form:)\s*$/i,'').trim();
+  const links = urls.map(url=>{
+    let label;
+    if(url.includes('signupgenius.com')) label='Sign up - Milton Ward Halloween Trunk or Treat';
+    else if(url.includes('forms.gle/xjf8crKgkmuNxnvN9')) label='Logo contest submission - Shipp Family Camp Logo Contest';
+    else label='Details - '+clean.split(/[.\n]/)[0];
+    return `<div style="margin-top:8px"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a></div>`;
+  }).join('');
+  return esc(clean).replace(/\n/g,'<br>')+links;
+}
 function renderAnnouncements(){
   const pdf = printableFooter(currentProgram());
   const secs = DATA.announcement_sections || [];
   if(secs.length){
     const head = `<div class="card" style="text-align:center"><h2 class="sec" style="border:none;margin:0">Announcements</h2></div>`;
     return head + secs.map(sctn => sctn.items.length ? `<div class="card"><h2 class="sec">${esc(sctn.header)}</h2>
-      <ul class="plain">${sctn.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul></div>` : '').join('') + pdf;
+      <ul class="plain">${sctn.items.map(i=>`<li>${announcementHtml(i)}</li>`).join('')}</ul></div>` : '').join('') + pdf;
   }
   const p = currentProgram();
   const anns = p && p.announcements ? p.announcements : [];
   if(!anns.length) return `<div class="notice">No announcements this week.</div>` + pdf;
   return `<div class="card"><h2 class="sec">Announcements</h2>
     <div style="font-size:.85rem;color:var(--muted);margin-bottom:8px">For ${esc(fmtDate(p.date))}</div>
-    <ol class="ann">${anns.map(a=>`<li value="${a.num}">${esc(a.text).replace(/\n/g,'<br>')}</li>`).join('')}</ol></div>` + pdf;
+    <ol class="ann">${anns.map(a=>`<li value="${a.num}">${announcementHtml(a.text)}</li>`).join('')}</ol></div>` + pdf;
 }
 function route(){
   const hash = location.hash.replace(/^#/,'') || '/';
