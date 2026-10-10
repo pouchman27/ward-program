@@ -306,7 +306,8 @@ function renderActivities(){
 function printableFooter(p){
   const pdfs = DATA.printable_programs || {};
   if(!p || !pdfs[p.date]) return '';
-  return `<div class="card" style="text-align:center"><h2 class="sec">Printable program</h2><div>${esc(fmtDate(p.date))}</div><button class="calbtn" onclick="downloadProgram('${esc(p.date)}')">Download folded PDF</button><div style="font-size:.8rem;color:var(--muted)">Letter landscape, double-sided, flip on short edge</div></div>`;
+  const provisional = !p.invocation?.trim() || !p.benediction?.trim() || /placeholder|filler|tbd|provisional/i.test((p.invocation||" ")+" "+(p.benediction||" "));
+  return `<div class="card" style="text-align:center"><h2 class="sec">Printable program</h2><div>${esc(fmtDate(p.date))}</div><button class="calbtn" onclick="downloadProgram('${esc(p.date)}')">Download folded PDF</button>${provisional ? '<div style="font-size:.85rem;margin-top:8px">Placeholder prayers this week</div>' : ''}<div style="font-size:.8rem;color:var(--muted)">Letter landscape, double-sided, flip on short edge</div></div>`;
 }
 function downloadProgram(date){
   const raw = atob((DATA.printable_programs || {})[date] || '');
