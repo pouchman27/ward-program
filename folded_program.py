@@ -32,6 +32,9 @@ def build(p,data,pin):
     W,H,CW,IN=792,612,396,36;PW=CW-2*IN
     day=datetime.date.fromisoformat(p['date']);label=day.strftime('%B %-d, %Y');end=day+datetime.timedelta(days=6)
     out=io.BytesIO();c=canvas.Canvas(out,pagesize=(W,H),pageCompression=1,invariant=1);c.setTitle('Milton Ward folded program - '+label);c.setAuthor('Milton Ward')
+    # Preserve the online layout; supporting PDF readers use these print defaults.
+    c.setViewerPreference('Duplex','DuplexFlipShortEdge')
+    c.setViewerPreference('PrintScaling','None')
     body=ParagraphStyle('body',fontName='Sans',fontSize=9.3,leading=12,textColor=INK)
     def para(x,y,text,width=PW,style=body,gap=4):
         obj=Paragraph(text,style);_,h=obj.wrap(width,600);obj.drawOn(c,x+IN,y-h);return y-h-gap
