@@ -14,7 +14,13 @@ def bodies(x):
  for tab in x.get('tabs',[]):
   dt=tab.get('documentTab',{})
   if 'body' in dt: yield dt['body']
-def text(p): return ''.join(e.get('textRun',{}).get('content','') for e in p.get('elements',[])).strip()
+def text(p):
+ t=''.join(e.get('textRun',{}).get('content','') for e in p.get('elements',[])).strip()
+ urls=[]
+ for e in p.get('elements',[]):
+  u=e.get('textRun',{}).get('textStyle',{}).get('link',{}).get('url')
+  if u and u not in t and u not in urls: urls.append(u)
+ return t+(' '+ ' '.join(urls) if urls else '')
 try:
  if _clean(docs,DOC_ID,d):
   d=docs.get(documentId=DOC_ID,includeTabsContent=True).execute()
@@ -33,4 +39,3 @@ sections, dropped = prune(sections)
 for t in dropped: print('pruned stale announcement:', t[:100])
 json.dump(sections,open(OUT,'w'))
 print(f'announcements: {len(sections)} sections, {len(dropped)} stale items pruned')
-
