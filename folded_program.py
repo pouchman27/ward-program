@@ -95,7 +95,7 @@ def build(p,data,pin):
     y=sub(y,'This week')
     for a in p.get('announcements',[]):
         t=a.get('text','')
-        if t and 'trunk or treat' not in t.lower(): y=para(x,y,escape(t),gap=4)
+        if t and 'trunk or treat' not in t.lower() and 'online program' not in t.lower(): y=para(x,y,escape(t),gap=4)
     for a in (data.get('activities') or {}).get('rows',[]):
         if p['date']<=a['date']<=end.isoformat():
             ad=datetime.date.fromisoformat(a['date']);text=a.get('reference') or a.get('schedule') or ''
@@ -104,7 +104,7 @@ def build(p,data,pin):
     # Only scoped public announcements; exclude examples, ended events and weekly duplicate corn maze.
     from prune import is_stale
     for sec in data.get('announcement_sections',[]):
-        items=[t for t in sec['items'] if not t.lower().startswith('example:') and not is_stale(t,day) and not (p['date']=='2026-10-11' and 'corn maze' in t.lower())]
+        items=[t for t in sec['items'] if not t.lower().startswith(('example:','milton ward online:')) and not is_stale(t,day) and not (p['date']=='2026-10-11' and 'corn maze' in t.lower())]
         if not items:continue
         y=sub(y,sec['header'].replace(' Announcements',''))
         for t in items:
