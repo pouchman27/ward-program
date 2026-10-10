@@ -241,7 +241,7 @@ function currentProgram(){
 function renderHome(){
   const p = currentProgram();
   if(!p) return `<div class="notice">No programs published yet.</div>`;
-  return programHtml(p, true);
+  return programHtml(p, true) + printableFooter(p);
 }
 function renderArchive(){
   const cur = currentProgram();
@@ -320,18 +320,19 @@ function downloadProgram(date){
 }
 function announcementHtml(text){
   const urls = [...new Set(text.match(/https?:\/\/[^\s<>]+/g) || [])];
-  const clean = text.replace(/https?:\/\/[^\s<>]+/g,'').replace(/(?:Sign up:|Guidelines and submission form:)\s*$/i,'').trim();
+  const clean = text.replace(/https?:\/\/[^\s<>]+/g,'').replace(/(?:Sign up:|Guidelines and submission form:|Ward website - Milton Ward online)\s*$/i,'').trim();
   const links = urls.map(url=>{
     let label;
     if(url.includes('signupgenius.com')) label='Sign up - Milton Ward Halloween Trunk or Treat';
     else if(url.includes('forms.gle/xjf8crKgkmuNxnvN9')) label='Logo contest submission - Shipp Family Camp Logo Contest';
+    else if(url==='https://miltonward.com') label='Ward website - Milton Ward online';
     else label='Details - '+clean.split(/[.\n]/)[0];
     return `<div style="margin-top:8px"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a></div>`;
   }).join('');
   return esc(clean).replace(/\n/g,'<br>')+links;
 }
 function renderAnnouncements(){
-  const pdf = printableFooter(currentProgram());
+  const pdf = "";
   const secs = DATA.announcement_sections || [];
   if(secs.length){
     const head = `<div class="card" style="text-align:center"><h2 class="sec" style="border:none;margin:0">Announcements</h2></div>`;
