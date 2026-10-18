@@ -103,6 +103,7 @@
   #gate input{width:100%;padding:12px 14px;font-size:1rem;border:1px solid var(--line);border-radius:8px;text-align:center}
   #gate button{width:100%;margin-top:10px;padding:12px;background:var(--navy);color:#f5f1e6;border:none;border-radius:8px;font-size:1rem;cursor:pointer}
   #gate .err{color:#a33;font-size:.85rem;margin-top:10px;display:none}
+  #gate .hint{font-size:.8rem;color:var(--muted);margin-top:12px;line-height:1.5}
   @media print{nav.tabs,footer{display:none}body{background:#fff}.card{border:none;box-shadow:none}}
 </style>
 </head>
@@ -113,6 +114,7 @@
     <div class="sub">Sacrament Meeting Program</div>
     <form id="gateform">
       <input type="password" id="gatepw" placeholder="Ward passphrase" autocomplete="off" autofocus>
+      <div class="hint">The name of our ward, both words capitalized, no spaces</div>
       <button type="submit">Open program</button>
     </form>
     <div class="err" id="gateerr">That passphrase didn't work - try again.</div>
