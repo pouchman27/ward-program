@@ -331,6 +331,8 @@ function announcementHtml(text){
     else if(url.includes('go.roswellstake.tech/stake-conference')) label='Watch online (English) - Roswell Stake Conference';
     else if(url.includes('go.roswellstake.tech/conferencia-de-estaca-en-espanol')) label='Watch online (Spanish) - Roswell Stake Conference';
     else if(url.includes('go.roswellstake.tech/conferencia-de-estaca-portugues')) label='Watch online (Portuguese) - Roswell Stake Conference';
+    else if(url.includes('facebook.com/roswellgeorgiastake')) label='Follow on Facebook - Roswell Georgia Stake';
+    else if(url.includes('instagram.com/roswellstakegeorgia')) label='Follow on Instagram - Roswell Georgia Stake';
     else label='Details - '+clean.split(/[.\n]/)[0];
     return `<div style="margin-top:8px"><a href="${esc(url)}" target="_blank" rel="noopener">${esc(label)}</a></div>`;
   }).join('');
