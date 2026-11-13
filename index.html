@@ -310,7 +310,7 @@ function printableFooter(p){
   if(!p || !pdfs[p.date]) return '';
   const provisional = !p.invocation?.trim() || !p.benediction?.trim() || /placeholder|filler|tbd|provisional/i.test((p.invocation||" ")+" "+(p.benediction||" "));
   const incomplete = provisional || !['presiding','conducting','organist','chorister'].every(k=>p[k]?.trim()) || !['opening_hymn','sacrament_hymn','closing_hymn'].every(k=>p[k]?.number && p[k]?.title) || !p.program_order?.length || (p.musical_number && (!p.musical_number.song || !p.musical_number.singers));
-  return `<div class="card" style="text-align:center"><h2 class="sec">Printable program</h2><div>${esc(fmtDate(p.date))}</div><button class="calbtn" onclick="downloadProgram('${esc(p.date)}')">Download folded PDF</button>${incomplete ? `<div style="font-size:.85rem;margin-top:8px">In progress${provisional ? ' - placeholder prayers this week' : ''}</div>` : ''}<div style="font-size:.8rem;color:var(--muted)">Letter landscape, double-sided, flip on short edge</div></div>`;
+  return `<div class="card" style="text-align:center"><h2 class="sec">Printable program</h2><div>${esc(fmtDate(p.date))}</div><button class="calbtn" onclick="downloadProgram('${esc(p.date)}')">Download folded PDF</button>${incomplete ? `<div style="font-size:.85rem;margin-top:8px">In progress</div>` : ''}<div style="font-size:.8rem;color:var(--muted)">Letter landscape, double-sided, flip on short edge</div></div>`;
 }
 function downloadProgram(date){
   const raw = atob((DATA.printable_programs || {})[date] || '');
