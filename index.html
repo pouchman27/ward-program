@@ -199,7 +199,7 @@ function programHtml(p, isCurrent){
 
   if(p.sacrament_hymn) h.push(`<div class="card administration">Administration of the Sacrament</div>`);
 
-  if(p.program_order && p.program_order.length){
+  if((p.program_order && p.program_order.length) || (p.primary_program && p.primary_program.length)){
     let items = p.program_order.map((x, i) => {
       const space = i ? ' style="margin-top:12px"' : '';
       if(x.type === 'speaker') return `<div${space}><dl class="pairs">${pair('Speaker', esc(x.name))}</dl></div>`;
