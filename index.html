@@ -213,6 +213,15 @@ function programHtml(p, isCurrent){
       }
       return '';
     }).join('');
+    // One-time Nov 15, 2026 Primary Presentation detail (approved by Nate 2026-11-14).
+    if(p.primary_program && p.primary_program.length){
+      const pp = p.primary_program.map(x => {
+        if(x.song) return `<div style="margin-top:6px;font-style:italic">Song &middot; ${esc(x.song)}</div>`;
+        return `<div style="margin-top:9px"><div>${esc(x.topic)}</div>` +
+               (x.who ? `<div style="color:var(--muted);font-size:.85rem;margin-left:10px">${esc(x.who)}</div>` : '') + '</div>';
+      }).join('');
+      items += `<div style="margin-top:12px;border-top:1px solid var(--line);padding-top:10px"><span class="bizhead">Primary Program</span>${pp}</div>`;
+    }
     h.push(sec('Program', items));
   } else if(p.speakers && p.speakers.length){
     // Backward compatibility for payloads made before ordered programs.
